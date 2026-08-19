@@ -46,38 +46,43 @@
           <li><strong>Leaderboard data.</strong> If you take part in the daily event leaderboard, your anonymous
           player ID, display name, and score are stored on our server (Google Firestore) and are readable by
           other players of the App. This data resets/rotates daily.</li>
-          <li><strong>Advertising identifiers (future).</strong> Wonderkin does not currently show ads. If/when an
-          advertising SDK (e.g. Google AdMob) is integrated, your device's advertising identifier (IDFA on iOS,
-          Advertising ID on Android) may be used to deliver ads — personalized ads only if you have opted in via
-          the in-app consent screen (Settings → Privacy), and iOS additionally requires your separate
-          App Tracking Transparency permission. Non-personalized/contextual ads may be shown without this
-          consent.</li>
-          <li><strong>In-app purchases.</strong> Purchases are processed entirely by the Apple App Store or
-          Google Play Store. We never see or store your payment card details.</li>
-          <li><strong>Standard technical data.</strong> Like most apps, basic technical/diagnostic data (app
-          version, crash logs, device type) may be collected by our infrastructure providers to keep the App
-          working.</li>
+          <li><strong>Advertising identifiers.</strong> Wonderkin shows rewarded and interstitial ads via Google
+          AdMob (currently configured with Google's test ad units only, while the App is in development). Your
+          device's advertising identifier (IDFA on iOS, Advertising ID on Android) may be used to deliver ads —
+          personalized ads only if you have opted in via the in-app consent screen (Settings → Privacy &amp;
+          Terms), and iOS additionally requires your separate App Tracking Transparency permission, asked once
+          right after that in-app choice. Non-personalized/contextual ads are shown instead when you don't opt
+          in, and always for players who indicate they're under 13.</li>
+          <li><strong>In-app purchases.</strong> Purchases are billed by the Apple App Store or Google Play Store
+          and processed via RevenueCat, a purchase-management service that receives your anonymous player ID and
+          purchase/receipt data to unlock the right items. We never see or store your payment card details.</li>
+          <li><strong>Analytics &amp; crash data.</strong> Firebase Analytics and Firebase Crashlytics collect
+          gameplay/usage events, app version, device type, and crash logs, tied to your anonymous player ID (not
+          your real identity), to help us fix bugs and understand which features are used.</li>
         </ul>
 
         <h2>2. How We Use Information</h2>
         <ul>
           <li>To save and restore your gameplay progress.</li>
           <li>To operate the daily leaderboard/event feature.</li>
-          <li>To show ads (once integrated) and process purchases.</li>
-          <li>To diagnose crashes and improve the App.</li>
+          <li>To show ads and process in-app purchases.</li>
+          <li>To diagnose crashes and understand feature usage so we can improve the App.</li>
         </ul>
         <p>We do not sell your information.</p>
 
         <h2>3. Third-Party Services</h2>
         <ul>
-          <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore) — stores the anonymous player ID,
-          display name, and leaderboard scores. See
+          <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Analytics, Crashlytics) — stores
+          the anonymous player ID, display name, leaderboard scores, and gameplay/crash diagnostics. See
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
-          <li><strong>Apple App Store / Google Play Store</strong> — process in-app purchases under their own
-          privacy policies.</li>
-          <li><strong>Google AdMob</strong> (future, once integrated) — will deliver ads under
+          <li><strong>Google AdMob</strong> — delivers ads under
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>
           and, where required, Google's User Messaging Platform consent flow.</li>
+          <li><strong>RevenueCat</strong> — manages in-app purchase entitlements; receives your anonymous player
+          ID and purchase data. See
+          <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a>.</li>
+          <li><strong>Apple App Store / Google Play Store</strong> — bill and process in-app purchases under
+          their own privacy policies.</li>
         </ul>
 
         <h2>4. Children's Privacy</h2>
@@ -96,8 +101,8 @@
         directly identifying information, most of these rights can be exercised simply by:</p>
         <ul>
           <li>Uninstalling the App (deletes all locally stored save data), and/or</li>
-          <li>Reopening Settings → Privacy in the App at any time to change or withdraw your ad-personalization
-          consent, and/or</li>
+          <li>Reopening Settings → Privacy &amp; Terms in the App at any time to change or withdraw your
+          ad-personalization consent, and/or</li>
           <li>Contacting <a href="mailto:salihyakann@gmail.com">salihyakann@gmail.com</a> with your in-app display
           name and approximate play dates so we can locate and delete your leaderboard entry.</li>
         </ul>
@@ -140,37 +145,45 @@
           <li><strong>Sıralama (leaderboard) verisi.</strong> Günlük etkinlik sıralamasına katılırsanız; anonim
           oyuncu kimliğiniz, görünen adınız ve puanınız sunucumuzda (Google Firestore) saklanır ve Uygulamanın
           diğer oyuncuları tarafından görüntülenebilir. Bu veri her gün yenilenir.</li>
-          <li><strong>Reklam kimlikleri (ileride).</strong> Wonderkin şu anda reklam göstermemektedir. Bir reklam
-          SDK'sı (ör. Google AdMob) entegre edildiğinde, cihazınızın reklam kimliği (iOS'ta IDFA, Android'de
-          Advertising ID) reklam sunmak için kullanılabilir — kişiselleştirilmiş reklamlar yalnızca uygulama içi
-          onay ekranından (Ayarlar → Gizlilik) izin verdiyseniz gösterilir; iOS'ta ayrıca ayrı bir App Tracking
-          Transparency izni de gerekir. Bu onay olmadan kişiselleştirilmemiş/bağlamsal reklamlar gösterilebilir.</li>
-          <li><strong>Uygulama içi satın almalar.</strong> Satın almalar tamamen Apple App Store veya Google Play
-          Store üzerinden işlenir. Ödeme kartı bilgilerinizi asla görmeyiz veya saklamayız.</li>
-          <li><strong>Standart teknik veri.</strong> Çoğu uygulama gibi, Uygulamanın çalışır durumda kalması için
-          altyapı sağlayıcılarımız temel teknik/tanılama verisi (uygulama sürümü, çökme kayıtları, cihaz tipi)
-          toplayabilir.</li>
+          <li><strong>Reklam kimlikleri.</strong> Wonderkin, Google AdMob üzerinden ödüllü ve geçiş (interstitial)
+          reklamlar gösterir (Uygulama geliştirme aşamasındayken şu an yalnızca Google'ın test reklam birimleriyle
+          yapılandırılmıştır). Cihazınızın reklam kimliği (iOS'ta IDFA, Android'de Advertising ID) reklam sunmak
+          için kullanılabilir — kişiselleştirilmiş reklamlar yalnızca uygulama içi onay ekranından (Ayarlar →
+          Gizlilik ve Şartlar) izin verdiyseniz gösterilir; iOS'ta bu tercihin hemen ardından ayrı bir App Tracking
+          Transparency izni de istenir. İzin vermediğinizde kişiselleştirilmemiş/bağlamsal reklamlar gösterilir;
+          13 yaşından küçük olduğunu belirten oyuncular için her zaman bu şekildedir.</li>
+          <li><strong>Uygulama içi satın almalar.</strong> Satın almalar Apple App Store veya Google Play Store
+          tarafından faturalandırılır ve doğru ürünleri açabilmek için anonim oyuncu kimliğinizi ve satın
+          alma/makbuz verinizi alan bir satın alma yönetim hizmeti olan RevenueCat üzerinden işlenir. Ödeme kartı
+          bilgilerinizi asla görmeyiz veya saklamayız.</li>
+          <li><strong>Analitik ve çökme verisi.</strong> Firebase Analytics ve Firebase Crashlytics; hataları
+          düzeltmemize ve hangi özelliklerin kullanıldığını anlamamıza yardımcı olmak için oyun/kullanım
+          olaylarını, uygulama sürümünü, cihaz tipini ve çökme kayıtlarını, gerçek kimliğiniz değil anonim oyuncu
+          kimliğinizle ilişkilendirerek toplar.</li>
         </ul>
 
         <h2>2. Bilgileri Nasıl Kullanıyoruz</h2>
         <ul>
           <li>Oyun ilerlemenizi kaydetmek ve geri yüklemek için.</li>
           <li>Günlük sıralama/etkinlik özelliğini işletmek için.</li>
-          <li>Reklam göstermek (entegre edildiğinde) ve satın almaları işlemek için.</li>
-          <li>Çökmeleri teşhis etmek ve Uygulamayı geliştirmek için.</li>
+          <li>Reklam göstermek ve uygulama içi satın almaları işlemek için.</li>
+          <li>Çökmeleri teşhis etmek ve özellik kullanımını anlayarak Uygulamayı geliştirmek için.</li>
         </ul>
         <p>Bilgilerinizi satmıyoruz.</p>
 
         <h2>3. Üçüncü Taraf Hizmetler</h2>
         <ul>
-          <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore) — anonim oyuncu kimliğini,
-          görünen adı ve sıralama puanlarını saklar. Bkz.
+          <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Analytics, Crashlytics) — anonim
+          oyuncu kimliğini, görünen adı, sıralama puanlarını ve oyun/çökme tanılama verisini saklar. Bkz.
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a>.</li>
-          <li><strong>Apple App Store / Google Play Store</strong> — uygulama içi satın almaları kendi gizlilik
-          politikaları kapsamında işler.</li>
-          <li><strong>Google AdMob</strong> (ileride entegre edildiğinde) — reklamları
+          <li><strong>Google AdMob</strong> — reklamları
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a>
-          ve gerekli hallerde Google'ın Kullanıcı Mesajlaşma Platformu onay akışı kapsamında sunacaktır.</li>
+          ve gerekli hallerde Google'ın Kullanıcı Mesajlaşma Platformu onay akışı kapsamında sunar.</li>
+          <li><strong>RevenueCat</strong> — uygulama içi satın alma haklarını yönetir; anonim oyuncu kimliğinizi
+          ve satın alma verinizi alır. Bkz.
+          <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Gizlilik Politikası</a>.</li>
+          <li><strong>Apple App Store / Google Play Store</strong> — uygulama içi satın almaları kendi gizlilik
+          politikaları kapsamında faturalandırır ve işler.</li>
         </ul>
 
         <h2>4. Çocukların Gizliliği</h2>
@@ -190,7 +203,7 @@
         <ul>
           <li>Uygulamayı kaldırmak (tüm yerel kayıtlı verileri siler) ve/veya</li>
           <li>Reklam kişiselleştirme onayınızı değiştirmek/geri çekmek için Uygulama içinde her zaman Ayarlar →
-          Gizlilik'i yeniden açmak ve/veya</li>
+          Gizlilik ve Şartlar'ı yeniden açmak ve/veya</li>
           <li>Sıralama kaydınızı bulup silebilmemiz için uygulama içi görünen adınız ve yaklaşık oynama
           tarihleriyle <a href="mailto:salihyakann@gmail.com">salihyakann@gmail.com</a> adresine yazmak.</li>
         </ul>
