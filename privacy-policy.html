@@ -46,6 +46,13 @@
           <li><strong>Leaderboard data.</strong> If you take part in the daily event leaderboard, your anonymous
           player ID, display name, and score are stored on our server (Google Firestore) and are readable by
           other players of the App. This data resets/rotates daily.</li>
+          <li><strong>Optional cloud backup (Google/Apple sign-in).</strong> If you choose to back up your
+          progress (Settings → Cloud Backup), we link your anonymous session to your Google or Apple account
+          using Firebase Authentication so you can restore your progress on a new device. This can make your
+          account's email address and, if you share it, your name available to us as part of your sign-in
+          profile — we only use this to identify your backup, never to contact you or share with third parties
+          beyond Firebase (Google) itself. Your gameplay data (described above) is then also stored on our
+          server, keyed to this account. This feature is entirely optional — the App works fully without it.</li>
           <li><strong>Advertising identifiers.</strong> Wonderkin shows rewarded and interstitial ads via Google
           AdMob (currently configured with Google's test ad units only, while the App is in development). Your
           device's advertising identifier (IDFA on iOS, Advertising ID on Android) may be used to deliver ads —
@@ -65,6 +72,7 @@
         <ul>
           <li>To save and restore your gameplay progress.</li>
           <li>To operate the daily leaderboard/event feature.</li>
+          <li>To let you optionally back up and restore your progress across devices.</li>
           <li>To show ads and process in-app purchases.</li>
           <li>To diagnose crashes and understand feature usage so we can improve the App.</li>
         </ul>
@@ -72,8 +80,9 @@
 
         <h2>3. Third-Party Services</h2>
         <ul>
-          <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Analytics, Crashlytics) — stores
-          the anonymous player ID, display name, leaderboard scores, and gameplay/crash diagnostics. See
+          <li><strong>Google Firebase</strong> (Authentication — including optional Google/Apple sign-in for
+          cloud backup, Cloud Firestore, Analytics, Crashlytics) — stores the anonymous player ID, display name,
+          leaderboard scores, your optional cloud backup, and gameplay/crash diagnostics. See
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
           <li><strong>Google AdMob</strong> — delivers ads under
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>
@@ -104,13 +113,16 @@
           <li>Reopening Settings → Privacy &amp; Terms in the App at any time to change or withdraw your
           ad-personalization consent, and/or</li>
           <li>Contacting <a href="mailto:salihyakann@gmail.com">salihyakann@gmail.com</a> with your in-app display
-          name and approximate play dates so we can locate and delete your leaderboard entry.</li>
+          name and approximate play dates so we can locate and delete your leaderboard entry, and/or</li>
+          <li>If you've linked a Google/Apple account for cloud backup, contacting us at the same address to
+          delete your cloud backup and unlink that account's sign-in data from Firebase.</li>
         </ul>
 
         <h2>6. Data Retention</h2>
         <p>Local save data remains on your device until you uninstall the App or clear its storage. Leaderboard
         entries are tied to a daily event period and are superseded each day; historical entries are periodically
-        purged.</p>
+        purged. An optional cloud backup (see §1) is kept until you delete it (request via the contact above) or
+        the App is discontinued.</p>
 
         <h2>7. Security</h2>
         <p>We use reasonable technical measures (including Firebase's built-in access rules, see our
@@ -145,6 +157,14 @@
           <li><strong>Sıralama (leaderboard) verisi.</strong> Günlük etkinlik sıralamasına katılırsanız; anonim
           oyuncu kimliğiniz, görünen adınız ve puanınız sunucumuzda (Google Firestore) saklanır ve Uygulamanın
           diğer oyuncuları tarafından görüntülenebilir. Bu veri her gün yenilenir.</li>
+          <li><strong>Opsiyonel bulut yedekleme (Google/Apple ile giriş).</strong> İlerlemeni yedeklemeyi
+          seçersen (Ayarlar → Bulut Yedekleme), anonim oturumunu Firebase Authentication üzerinden Google veya
+          Apple hesabınla ilişkilendiririz; böylece yeni bir cihazda ilerlemeni geri yükleyebilirsin. Bu, giriş
+          profilin aracılığıyla hesabının e-posta adresini ve paylaşmayı seçersen adını bize açık edebilir —
+          bunu yalnızca yedeğini tanımlamak için kullanırız, seninle iletişime geçmek veya Firebase (Google)
+          dışında üçüncü taraflarla paylaşmak için değil. Oyun verilerin (yukarıda açıklanan) bu durumda
+          sunucumuzda bu hesaba bağlı olarak da saklanır. Bu özellik tamamen opsiyoneldir — Uygulama onsuz da
+          tam olarak çalışır.</li>
           <li><strong>Reklam kimlikleri.</strong> Wonderkin, Google AdMob üzerinden ödüllü ve geçiş (interstitial)
           reklamlar gösterir (Uygulama geliştirme aşamasındayken şu an yalnızca Google'ın test reklam birimleriyle
           yapılandırılmıştır). Cihazınızın reklam kimliği (iOS'ta IDFA, Android'de Advertising ID) reklam sunmak
@@ -166,6 +186,7 @@
         <ul>
           <li>Oyun ilerlemenizi kaydetmek ve geri yüklemek için.</li>
           <li>Günlük sıralama/etkinlik özelliğini işletmek için.</li>
+          <li>İlerlemenizi isteğe bağlı olarak cihazlar arasında yedekleyip geri yükleyebilmeniz için.</li>
           <li>Reklam göstermek ve uygulama içi satın almaları işlemek için.</li>
           <li>Çökmeleri teşhis etmek ve özellik kullanımını anlayarak Uygulamayı geliştirmek için.</li>
         </ul>
@@ -173,8 +194,9 @@
 
         <h2>3. Üçüncü Taraf Hizmetler</h2>
         <ul>
-          <li><strong>Google Firebase</strong> (Authentication, Cloud Firestore, Analytics, Crashlytics) — anonim
-          oyuncu kimliğini, görünen adı, sıralama puanlarını ve oyun/çökme tanılama verisini saklar. Bkz.
+          <li><strong>Google Firebase</strong> (Authentication — bulut yedekleme için opsiyonel Google/Apple
+          girişi dahil, Cloud Firestore, Analytics, Crashlytics) — anonim oyuncu kimliğini, görünen adı, sıralama
+          puanlarını, opsiyonel bulut yedeğinizi ve oyun/çökme tanılama verisini saklar. Bkz.
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a>.</li>
           <li><strong>Google AdMob</strong> — reklamları
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a>
@@ -205,13 +227,16 @@
           <li>Reklam kişiselleştirme onayınızı değiştirmek/geri çekmek için Uygulama içinde her zaman Ayarlar →
           Gizlilik ve Şartlar'ı yeniden açmak ve/veya</li>
           <li>Sıralama kaydınızı bulup silebilmemiz için uygulama içi görünen adınız ve yaklaşık oynama
-          tarihleriyle <a href="mailto:salihyakann@gmail.com">salihyakann@gmail.com</a> adresine yazmak.</li>
+          tarihleriyle <a href="mailto:salihyakann@gmail.com">salihyakann@gmail.com</a> adresine yazmak, ve/veya</li>
+          <li>Bulut yedekleme için bir Google/Apple hesabı bağladıysanız, bulut yedeğinizi silmemiz ve o hesabın
+          giriş verisini Firebase'den kaldırmamız için aynı adresten bize ulaşmak.</li>
         </ul>
 
         <h2>6. Veri Saklama</h2>
         <p>Yerel kayıt verisi, Uygulamayı kaldırana veya depolamasını temizleyene kadar cihazınızda kalır.
         Sıralama kayıtları günlük etkinlik dönemine bağlıdır ve her gün yenilenir; geçmiş kayıtlar periyodik
-        olarak temizlenir.</p>
+        olarak temizlenir. Opsiyonel bulut yedeği (bkz. §1), siz silmeyi talep edene (yukarıdaki adresten) veya
+        Uygulama sonlandırılana kadar saklanır.</p>
 
         <h2>7. Güvenlik</h2>
         <p>Verileri korumak için makul teknik önlemler kullanıyoruz (Firebase'in yerleşik erişim kuralları dahil,
