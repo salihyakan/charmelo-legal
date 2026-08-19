@@ -2,10 +2,11 @@
   --bg: #faf7f0;
   --card: #ffffff;
   --text: #241a3d;
-  --muted: #5c527a;
+  --muted: #4a4358;
   --accent: #9a611a;
-  --accent2: #2fbfa3;
+  --accent2: #147a6b;
   --border: #e8dfc9;
+  --chip-text: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,10 +14,11 @@
     --bg: #14101f;
     --card: #1e1836;
     --text: #f2eefc;
-    --muted: #b3a8d6;
+    --muted: #c3b9e0;
     --accent: #f5c518;
-    --accent2: #4fd6bc;
+    --accent2: #5be3c9;
     --border: #34294f;
+    --chip-text: #0a0a0a;
   }
 }
 
@@ -27,7 +29,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.75;
 }
 
 .wrap {
@@ -56,7 +59,7 @@ nav.top a {
   color: var(--muted);
   text-decoration: none;
   margin-left: 18px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
 }
 nav.top a:hover { color: var(--accent2); }
@@ -65,31 +68,38 @@ nav.top a:hover { color: var(--accent2); }
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 28px 28px 8px;
+  padding: 32px 28px 12px;
 }
 
-h1 { font-size: 26px; margin-top: 0; }
-h2 { font-size: 19px; margin-top: 34px; color: var(--accent); }
-p, li { color: var(--text); font-size: 15px; }
-.muted { color: var(--muted); font-size: 13px; }
-ul { padding-left: 20px; }
-a { color: var(--accent2); }
+h1 { font-size: 30px; margin-top: 0; }
+h2 { font-size: 22px; margin-top: 40px; margin-bottom: 12px; color: var(--accent); }
+p, li { color: var(--text); font-size: 17px; }
+li { margin-bottom: 8px; }
+.muted { color: var(--muted); font-size: 15px; }
+ul { padding-left: 22px; }
+a {
+  color: var(--accent2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+a:hover { color: var(--accent); }
 
 .lang-toggle { display: flex; gap: 8px; margin-bottom: 20px; }
 .lang-toggle input { display: none; }
 .lang-toggle label {
   cursor: pointer;
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--muted);
 }
 #lang-en:checked ~ .lang-toggle label[for="lang-en"],
 #lang-tr:checked ~ .lang-toggle label[for="lang-tr"] {
   background: var(--accent2);
-  color: #0a0a0a;
+  color: var(--chip-text);
   border-color: var(--accent2);
 }
 .doc-tr, .doc-en { display: none; }
@@ -120,6 +130,6 @@ footer.site {
   display: block;
   font-weight: 400;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 4px;
 }
