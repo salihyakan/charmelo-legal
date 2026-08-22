@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Account Deletion — Charmelo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./">Charmelo</a>
+    <nav class="top">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+    </nav>
+  </header>
+
+  <div class="card">
+    <input type="radio" name="lang" id="lang-en" checked>
+    <input type="radio" name="lang" id="lang-tr">
+    <div class="lang-toggle">
+      <label for="lang-en">English</label>
+      <label for="lang-tr">Türkçe</label>
+    </div>
+
+    <div class="content">
+      <div class="doc-en">
+        <h1>Account Deletion</h1>
+        <p class="muted">Effective date: August 22, 2026 · Version 1.0</p>
+
+        <p>This page explains how to delete your <strong>Charmelo</strong> account and its associated data.
+        Charmelo is developed by <strong>Salih Yakan</strong> (an individual developer). Contact us anytime at
+        <a href="mailto:salihyakann@gmail.com">salihyakann@gmail.com</a>.</p>
+
+        <h2>1. What "Account" Means in Charmelo</h2>
+        <p>Charmelo does not require you to create an account to play. An "account" only exists if you've
+        chosen to link your progress to a Google or Apple sign-in for optional cross-device cloud backup
+        (Settings → Cloud Backup). If you've never used that feature, there is no account to delete — you can
+        simply uninstall the app to remove all data stored on your device.</p>
+
+        <h2>2. Delete Your Account In-App (Immediate)</h2>
+        <p>If you've linked a Google or Apple account:</p>
+        <ol>
+          <li>Open Charmelo and go to <strong>Settings → Cloud Backup</strong>.</li>
+          <li>Tap <strong>Delete My Account</strong>.</li>
+          <li>Confirm on the warning screen that appears.</li>
+        </ol>
+        <p>This immediately and permanently deletes your linked Google/Apple sign-in identity and your cloud
+        backup save data from our servers. It cannot be undone.</p>
+
+        <h2>3. Request Deletion Without the App</h2>
+        <p>If you no longer have the app installed, or can't sign in, email
+        <a href="mailto:salihyakann@gmail.com">salihyakann@gmail.com</a> from the same email address associated
+        with the Google/Apple account you linked, with the subject "Charmelo Account Deletion." We will verify
+        and process your request within <strong>30 days</strong> and confirm by email once it's complete.</p>
+
+        <h2>4. What Gets Deleted</h2>
+        <ul>
+          <li>Your linked Google/Apple sign-in identity (Firebase Authentication record).</li>
+          <li>Your cloud backup save data (Firestore document tied to that identity).</li>
+        </ul>
+
+        <h2>5. What Is Not Deleted / Retained</h2>
+        <ul>
+          <li><strong>Local progress on your device</strong> is not affected by account deletion — it's stored
+          separately (Capacitor Preferences) and is only removed by uninstalling the app.</li>
+          <li><strong>Daily leaderboard entries</strong> are tied to an anonymous player ID, not your linked
+          account, and already rotate out daily — see our
+          <a href="privacy-policy.html">Privacy Policy</a> for details.</li>
+          <li><strong>Purchase records</strong> required for tax, accounting, and fraud-prevention purposes may
+          be retained by Apple, Google, and RevenueCat under their own retention policies, independent of your
+          Charmelo account deletion.</li>
+        </ul>
+
+        <h2>6. Questions</h2>
+        <p>Email <a href="mailto:salihyakann@gmail.com">salihyakann@gmail.com</a> with any questions about this
+        process.</p>
+      </div>
+
+      <div class="doc-tr">
+        <h1>Hesap Silme</h1>
+        <p class="muted">Yürürlük tarihi: 22 Ağustos 2026 · Sürüm 1.0</p>
+
+        <p>Bu sayfa, <strong>Charmelo</strong> hesabınızı ve ilişkili verilerinizi nasıl silebileceğinizi
+        açıklar. Charmelo, bireysel geliştirici <strong>Salih Yakan</strong> tarafından geliştirilmektedir. Bize
+        her zaman <a href="mailto:salihyakann@gmail.com">salihyakann@gmail.com</a> adresinden ulaşabilirsiniz.</p>
+
+        <h2>1. Charmelo'da "Hesap" Ne Anlama Gelir</h2>
+        <p>Charmelo'yu oynamak için hesap oluşturmanız gerekmez. Bir "hesap", yalnızca ilerlemenizi opsiyonel
+        cihazlar arası bulut yedeklemesi için bir Google veya Apple girişine bağlamayı seçtiyseniz var olur
+        (Ayarlar → Bulut Yedekleme). Bu özelliği hiç kullanmadıysanız silinecek bir hesap yoktur — cihazınızda
+        saklanan tüm verileri kaldırmak için uygulamayı kaldırmanız yeterlidir.</p>
+
+        <h2>2. Hesabınızı Uygulama İçinden Silin (Anında)</h2>
+        <p>Bir Google veya Apple hesabı bağladıysanız:</p>
+        <ol>
+          <li>Charmelo'yu açın ve <strong>Ayarlar → Bulut Yedekleme</strong>'ye gidin.</li>
+          <li><strong>Hesabımı Sil</strong>'e dokunun.</li>
+          <li>Görüntülenen uyarı ekranında işlemi onaylayın.</li>
+        </ol>
+        <p>Bu işlem, bağlı Google/Apple giriş kimliğinizi ve bulut yedek verinizi sunucularımızdan anında ve
+        kalıcı olarak siler. Geri alınamaz.</p>
+
+        <h2>3. Uygulama Olmadan Silme Talebi</h2>
+        <p>Uygulama artık cihazınızda yoksa veya giriş yapamıyorsanız, bağladığınız Google/Apple hesabıyla
+        ilişkili e-posta adresinizden "Charmelo Hesap Silme" konu başlığıyla
+        <a href="mailto:salihyakann@gmail.com">salihyakann@gmail.com</a> adresine yazın. Talebinizi doğrulayıp
+        <strong>30 gün</strong> içinde işleme alacak ve tamamlandığında size e-posta ile bildireceğiz.</p>
+
+        <h2>4. Neler Silinir</h2>
+        <ul>
+          <li>Bağlı Google/Apple giriş kimliğiniz (Firebase Authentication kaydı).</li>
+          <li>O kimliğe bağlı bulut yedek verisi (Firestore belgesi).</li>
+        </ul>
+
+        <h2>5. Neler Silinmez / Saklanır</h2>
+        <ul>
+          <li><strong>Cihazınızdaki yerel ilerleme</strong> hesap silme işleminden etkilenmez — ayrı olarak
+          saklanır (Capacitor Preferences) ve yalnızca uygulamayı kaldırarak silinir.</li>
+          <li><strong>Günlük sıralama kayıtları</strong> bağlı hesabınıza değil anonim oyuncu kimliğinize
+          bağlıdır ve zaten her gün yenilenir — ayrıntılar için
+          <a href="privacy-policy.html">Gizlilik Politikası</a>'na bakın.</li>
+          <li><strong>Satın alma kayıtları</strong>, vergi, muhasebe ve dolandırıcılık önleme amacıyla Apple,
+          Google ve RevenueCat tarafından kendi saklama politikaları kapsamında, Charmelo hesap silme işleminizden
+          bağımsız olarak tutulabilir.</li>
+        </ul>
+
+        <h2>6. Sorular</h2>
+        <p>Bu süreçle ilgili sorularınız için: <a href="mailto:salihyakann@gmail.com">salihyakann@gmail.com</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site">
+    <p class="muted">Charmelo © 2026 Salih Yakan</p>
+  </footer>
+</div>
+</body>
+</html>
